@@ -1,11 +1,11 @@
 
 .wrapper {
     display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    justify-content: center; 
-    height: 100vh;          
-    text-align: center;     
+    justify-content: center;
+    align-items: center;
+    gap: 40px;           /* Расстояние между блоками */
+    height: 100vh;
+    text-align: center;
 }
 
 .spinner {
@@ -34,6 +34,38 @@
 }
 
 @keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+.spinner2 {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: blue;
+    position: relative;
+    animation: spin2 1.4s linear infinite;
+    background: conic-gradient(from 90deg at 50% 0%, #cfffeb, #6cfcd2, #0df6cf);
+    box-shadow: 0 0 150px -75px;
+}
+
+.spinner2::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    background-color:white;
+    box-shadow: inset 0px 0px 110px -70px black;
+}
+
+@keyframes spin2 {
     to {
         transform: rotate(360deg);
     }
